@@ -1,0 +1,100 @@
+{
+    "Storage":{
+        "DefaultEndpointsProtocol": "https",
+        "AccountName": "storage account name",
+        "AccountKey": "storage account key",
+        "EndpointSuffix": "core.windows.net",
+        "ContainerName": "custommodeldata",
+        "SasTokenDurationInHour": "1"
+    },
+    "SpeechService":{
+        "Region": "westus2",
+        "ApiKey": "speech service key"
+    },
+    "Project": {
+        "DisplayName": "Tool_Playbook",
+        "Locale": "en-US",
+        "Description": "Tool_Playbook description",
+        "CreateProject": "true"
+    },
+    "Datasets":[
+        {
+            "FilePath": "data/train/transcript_normalized.txt",
+            "DatasetDisplayName": "Text Dataset (Tool)",
+            "Kind": "Language"
+        },
+        {
+            "FilePath": "data/train/pronunciation.txt",
+            "DatasetDisplayName": "Pronunciation Dataset (Tool)",
+            "Kind":"Pronunciation"
+        },
+        {
+            "FilePath": "data/audioTranscript.zip",
+            "DatasetDisplayName": "Acoustic Dataset (Tool)",
+            "Kind":"Acoustic"
+        },
+        {
+            "FilePath": "data/test/5Min_Audio.zip",
+            "DatasetDisplayName": "5Min_Test_Audio",
+            "Kind":"Acoustic"
+        }
+    ],
+    "BaseModel":{
+        "DisplayName": "20210802",
+        "Locale": "en-US"
+    },
+    "CustomModel":{
+        "DisplayName": "Tool_Custom model",
+        "Locale": "en-US",
+        "Datasets": ["Pronunciation Dataset (Tool)", "Text Dataset (Tool)"]
+    },
+    "TestConfig": {
+        "Evaluations":[
+            {
+                "DatasetDisplayName": "5Min_Test_Audio",
+                "Model1": {
+                    "DisplayName": "20210802",
+                    "IsBaseModel": "true"
+                },
+                "Model2": {
+                    "DisplayName": "Tool_Custom model",
+                    "IsBaseModel": "false"
+                },
+                "DisplayName": "Tool_5Min_Test_Eval",
+                "Description": "Testing evaluation using the tool",
+                "Locale":"en-US"
+            }
+        ]
+    },
+    "EndPoint":{
+        "DisplayName": "Tool_Endpoint",
+        "Locale": "en-US"
+    },
+    "CopyModel":{
+        "Source": {
+            "SpeechService":{
+                "Region": "eastus",
+                "ApiKey": "API KEY FOR SOURCE PROJECT"
+            },
+            "Project": {
+                "DisplayName": "Tool_Playbook",
+                "Locale": "en-US"
+            },
+            "CustomModel":{
+                "DisplayName": "Tool_Custom model",
+                "Locale": "en-US"
+            }
+        },
+        "Destination":{
+            "SpeechService":{
+                "Region": "westeurope",
+                "ApiKey": "API KEY FOR DESTINATION SPEECH RESOURCE"
+            },
+            "Project": {
+                "DisplayName": "Tool_Playbook",
+                "Locale": "en-US",
+                "CreateProject": "true"
+            }
+        }
+    }
+}

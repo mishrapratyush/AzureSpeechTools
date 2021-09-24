@@ -1,0 +1,13 @@
+{
+    "textNormalization":{
+        "removePunctuation": true,
+        "filterPhrases":{
+            "apply":true,
+            "phraseList":["singing"]
+        },
+        "findRepetition": true,
+        "toLowerCase": true,
+        "replaceHypens":true,
+        "outputSingleLine":true
+    }
+}

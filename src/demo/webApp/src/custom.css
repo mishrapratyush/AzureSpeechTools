@@ -1,0 +1,64 @@
+.main-container {
+    margin-top: 100px;
+}
+
+.fa-microphone {
+    color: #14A76C;
+}
+
+.fa-microphone:hover {
+    color: #0c6e47;
+}
+
+.fa-file-audio {
+    color: #FF652F;
+}
+
+.fa-file-audio:hover {
+    color: #d44916;
+}
+
+.fa-sync {
+    color: #14A76C;
+}
+
+.fa-sync:hover {
+    color: #0c6e47;
+}
+
+.fa-stream{
+    color: #14A76C;
+}
+
+.fa-stream:hover{
+    color: #0c6e47;
+}
+
+.output-display {
+    background-color: #383b4b;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.luis-output-display {
+    background-color: #383b4b;
+    height: 250px;
+    overflow-y: scroll;
+}
+
+.fas, .fa {
+    cursor: pointer;
+}
+
+.background {
+    background-color: #272727;
+    color: #747474;
+}
+
+input[type="text"]{
+    width: 250px;
+    font-size: small;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color:burlywood;
+}
